@@ -1,0 +1,11 @@
+Package: rocauc
+Type: Package
+Title: Computes AUC scores
+Version: 1.0
+Date: 2016-05-14
+Author: Ewan Dunbar
+Maintainer: Ewan Dunbar <emd@umd.edu>
+Description: Computes AUC scores
+License: GPLv3
+LazyData: TRUE
+RoxygenNote: 5.0.1
