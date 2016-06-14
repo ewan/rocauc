@@ -5,6 +5,7 @@
 #' @param x A variable.
 #' @param y f(x).
 #' @return The approximate area under f(x).
+#' @export
 integrate_finite <- function(x, y) {
   x <- x[!is.na(x) & !is.na(y)]
   y <- y[!is.na(x) & !is.na(y)]
@@ -20,6 +21,7 @@ integrate_finite <- function(x, y) {
 #' @param tpr A vector of true positive rates.
 #' @param fpr A vector, of the same length, of false positive rates.
 #' @return The area under the ROC curve.
+#' @export
 auc <- function(tpr, fpr) {
   auc_partial <- integrate_finite(fpr, tpr)
   box_area <- (max(fpr, na.rm=T)-min(fpr, na.rm=T))*
