@@ -55,3 +55,16 @@ auc_by <- function(measure, classes, goldleft) {
   }
   return(with(pred_stats(measure, classes_f), auc(tpr, fpr)))
 }
+
+#' Compute AUC for observations in a data frame
+#'
+#' @param d A data frame
+#' @param measure_var The name of the measure variable
+#' @param class_var The name of the class variable
+#' @param goldleft The value of the class variable corresponding to the
+#' "negative" group, i.e., the one which will be on the < side of the
+#' classifier.
+#' @export
+auc_by_df <- function(d, measure_var, class_var, goldleft) {
+  return(auc_by(d[[measure_var]], d[[class_var]], goldleft))
+}
